@@ -40,5 +40,41 @@ class DisplayBoard(dt.DataSet):
     E4 = ColorItem("E4", default="black").set_pos(col=3)
     E5 = ColorItem("E5", default="black").set_pos(col=4)
     
-param = DisplayBoard()
-param.view()
+class ChooseMove(dt.DataSet):
+    """c4o5x5
+    Player N, select your move:
+    """ #need to make N change with player number
+    move_set=[((0,0), 'A1'),
+             ((0,1), "A2"),
+             ((0,2), "A3"),
+             ((0,3), "A4"),
+             ((0,4), "A5"),
+             ((1,0), 'B1'),
+             ((1,1), "B2"),
+             ((1,2), "B3"),
+             ((1,3), "B4"),
+             ((1,4), "B5"),
+             ((2,0), 'C1'),
+             ((2,1), "C2"),
+             ((2,2), "C3"),
+             ((2,3), "C4"),
+             ((2,4), "C5"),
+             ((3,0), 'D1'),
+             ((3,1), "D2"),
+             ((3,2), "D3"),
+             ((3,3), "D4"),
+             ((3,4), "D5"),
+             ((4,0), 'E1'),
+             ((4,1), "E2"),
+             ((4,2), "E3"),
+             ((4,3), "E4"),
+             ((4,4), "E5")
+             ]
+    Move = ChoiceItem("Single choice 1",
+                        move_set)
+    
+board_results = DisplayBoard() #this stuff is just for demo purposes
+board_results.view()           #this too    
+
+new_move = ChooseMove()        #ditto
+new_move.edit()                #"
