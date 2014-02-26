@@ -1,9 +1,9 @@
-class AI:
-    def make_random_move(board.moves,player_name='CPU'):
+class AI():
+    def make_random_move(board,player_name='CPU'):
         while True: #faking a do while
             xpos = random.randint(5)
             ypos = random.randint(5)
-            if board.moves[xpos][ypos] == None: #this, with the returns below, is like the while()
-                board.moves[xpos][ypos] = player_name
+            if board.marks[xpos][ypos] == None: #this, with the returns below, is like the while()
+                board.marks[xpos][ypos] = player_name
                 return board
         #There's a bug in make_random_move somewhere. It's probably to do with how Python deals with classes; I get an error when I try to pass the board object to this function. I'll fix it unless someone else figures it out.
