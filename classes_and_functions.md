@@ -33,7 +33,7 @@ ui: #for non grahpic ui
 * display_winning_dialog(board,player,player2=None)
 * display_losing_dialog(board,player,player2=None)
 * display_player_statistics(player)
-* update
+* display_input_player_data(player) #can also be used for updating player data
 
 
 test_harness: #this stuff should be expanded
