@@ -1,6 +1,6 @@
 constants:
 * database_location = r'...'
-* difficulties = {0:'Easy',1:'Normal',3:'Hard'}
+* difficulties = {0:'Easy',1:'Normal',2:'Hard'}
 * board_size_x = 5
 * board_size_y = 5
 * winning_sequence = 4
@@ -36,5 +36,5 @@ ui: #for non grahpic ui
 * update
 
 
-test_harness: #[this stuff should be expanded, I'm guessing]
+test_harness: #this stuff should be expanded
 * test_winning_positions()
