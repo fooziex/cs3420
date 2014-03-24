@@ -14,8 +14,6 @@ board:
 * board_data[board_size_x][board_size_y]
 * check_winning_moves()
 * check_position(x,y)
-* draw_board(board=board)
-* get_player_input(player)
 
 player:
 * id
@@ -34,6 +32,8 @@ ui: #for non grahpic ui
 * display_player_statistics(player)
 * display_input_player_data(player) #can also be used for updating player data
 * display_game_board(player,player=None,board)
+* draw_board(board=board)
+* get_player_input(board,player)
 
 
 test_harness: #this stuff should be expanded
