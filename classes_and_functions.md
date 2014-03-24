@@ -13,6 +13,8 @@ board:
 * board_data[board_size_x][board_size_y]
 * check_winning_moves()
 * check_position(x,y)
+* draw_board()
+* get_player_input(player)
 
 player:
 * get_player_data(database,player_id)
@@ -21,10 +23,6 @@ player:
 * name
 * number_wins
 * number_losses
-
-game_harness: #for graphics
-* draw_board(board)
-* get_input()
 
 ui: #for non grahpic ui
 * display_title()
