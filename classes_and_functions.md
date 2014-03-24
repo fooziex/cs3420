@@ -34,6 +34,7 @@ ui: #for non grahpic ui
 * display_losing_dialog(board,player,player2=None)
 * display_player_statistics(player)
 * display_input_player_data(player) #can also be used for updating player data
+* display_game_board(player,player=None,board)
 
 
 test_harness: #this stuff should be expanded
