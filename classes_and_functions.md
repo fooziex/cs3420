@@ -6,23 +6,24 @@ constants:
 * winning_sequence = 4
 
 ai:  
-* make_move(difficulty=1)
+* difficulty
+* make_move(mode=difficulty)
 * make_random_move()
 
 board:
 * board_data[board_size_x][board_size_y]
 * check_winning_moves()
 * check_position(x,y)
-* draw_board()
+* draw_board(board=board)
 * get_player_input(player)
 
 player:
-* get_player_data(database,player_id)
-* write_player_data(database,player_id)
 * id
 * name
 * number_wins
 * number_losses
+* get_player_data(database,player_id)
+* write_player_data(database,player_id)
 
 ui: #for non grahpic ui
 * display_title()
