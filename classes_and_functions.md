@@ -36,5 +36,5 @@ ui: #for non grahpic ui
 * get_player_input(board,player)
 
 
-test_harness: #this stuff should be expanded
+test_harness: #this stuff should be expanded or not
 * test_winning_positions()
