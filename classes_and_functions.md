@@ -38,3 +38,5 @@ ui: #for non grahpic ui
 
 test_harness: #this stuff should be expanded
 * test_winning_positions()
+
+* Can you read this?
