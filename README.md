@@ -19,6 +19,7 @@ The problem with classes calling functions is solved:
         #not like this
         def broken(argument):
 ```
+Functions in classes assume they work like this, and this is how to get access to class members from a function within that class.
 
 Currently all the code on github is module-independent. ~~I'm going to upload the SDL code (with board graphics) soon, which will require PySDL2.~~ Working from the bottom up. I'll have the Player_Data class complete by tonight, and will then start on AI.py, then finally the board graphics.
 
