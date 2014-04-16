@@ -11,6 +11,13 @@ Installing Python:
  * guiqwt
  * PySDL2
 
-Currently all the code on github is module-independent. ~~I'm going to upload the SDL code (with board graphics) soon, which will require PySDL2.~~ Working from the bottom up. I'll have the Player_Data class complete by tonight, and will then start on AI.py, then finally the board graphics. 
+The problem with classes calling functions is solved: 
+    Class Test():
+        #you need to do it like this
+        def works(self,argument):
+        #not like this
+        def broken(argument):
+
+Currently all the code on github is module-independent. ~~I'm going to upload the SDL code (with board graphics) soon, which will require PySDL2.~~ Working from the bottom up. I'll have the Player_Data class complete by tonight, and will then start on AI.py, then finally the board graphics.
 
 Look at the [TODO](https://github.com/fooziex/cs3420/wiki).
