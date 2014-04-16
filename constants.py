@@ -1,0 +1,1 @@
+PLAYER_DATABASE = r'C:\home\work\c4o5x5\player_data.db'
