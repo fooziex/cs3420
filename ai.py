@@ -1,8 +1,10 @@
+import random
+
 class AI():
-    def make_random_move(board,player_name='CPU'):
+    def make_random_move(self,board,player_name='CPU'):
         while True: #faking a do while
-            xpos = random.randint(5)
-            ypos = random.randint(5)
+            xpos = random.randint(0,4)
+            ypos = random.randint(0,4)
             if board.marks[xpos][ypos] == None: #this, with the returns below, is like the while()
                 board.marks[xpos][ypos] = player_name
                 return board
