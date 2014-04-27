@@ -30,7 +30,7 @@ class PlayerData():
     def list_players(self):
         Session = sessionmaker(bind=engine)
         session = Session()
-        players = session.query(Players).all()
+        players = session.query(Player).all()
         player_names = set()
         for player in players:
             player_names.add(player.name)
@@ -40,7 +40,7 @@ class PlayerData():
     def load_player(self, playername):
         Session = sessionmaker(bind=engine)
         session = Session()
-        player = session.query(Players).filter_by(name=playername)
+        player = session.query(Player).filter_by(name=playername)
         if player.count() == 1:
             player_data = player.first()
             self.id = player_data.id
@@ -68,6 +68,18 @@ class PlayerData():
             session.close()
         else:
             raise Exception  #should be more specific
+
+        def update_player(self, playername, wins, losses):
+            Session = sessionmaker(bind=engine)
+            session = Session()
+            if session.query(Player).filter_by(name=playername).count() == 1:
+                player = session.query(Player).filter_by(name=playername)
+                player.update(values={'wins':wins,'losses':losses})
+                session.commit()
+                session.close()
+            else:
+                raise Exception
+
 
     def __repr__(self):
         return "<Player(id='%s', name='%s', wins='%s', losses='%s')>" % (self.id, self.name, self.wins, self.losses)
