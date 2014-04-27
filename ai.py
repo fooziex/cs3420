@@ -24,3 +24,4 @@ class AI():
                 if count == 3 :
                     if board.marks[check_move[0]][check_move[1]] is None:
                         return check_move
+        return False,False
