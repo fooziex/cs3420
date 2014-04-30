@@ -19,7 +19,7 @@ class Board():
         """Returns (False, False) if no winning moves are found or (player_name,winning_positions) if one is found."""
 
         for positions in self.winning_positions:
-            to_match = Board.marks[positions[0][0]][positions[0][1]] # this is the player in the first position of the winning moves
+            to_match = self.marks[positions[0][0]][positions[0][1]] # this is the player in the first position of the winning moves
             if to_match is None:
                 continue  # no player has this spot, so there can't be a winner in this set of positions
             count = 0  # number of positions in a row that match
@@ -27,13 +27,19 @@ class Board():
             for position in positions:
                 xpos = position[0]
                 ypos = position[1]
-                if Board.marks[xpos][ypos] != to_match:
+                if self.marks[xpos][ypos] != to_match:
                     continue
-                elif Board.marks[xpos][ypos] == to_match:
+                elif self.marks[xpos][ypos] == to_match:
                     count = count + 1
-            if count == WINNING_POSITIONS:
+            if count == POSITIONS_TO_WIN:
                 return to_match, positions
         return False, False
+
+    def update_position(self,x,y,playername):
+        if self.marks[x][y] is None:
+            self.marks[x][y] = playername
+        else:
+            raise ValueError
 
     def __repr__(self):
         return str(self.marks[0])+'\n'+str(self.marks[1])+'\n'+str(self.marks[2])+'\n'+str(self.marks[3])+'\n'+str(self.marks[4])
