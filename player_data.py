@@ -49,11 +49,20 @@ class PlayerData():
             self.losses = player_data.losses
         else:
             session.close()
-            raise Exception  #should be more specific
+            raise LookupError
         session.close()
         return player_data
 
     def create_player(self, playername):
+
+        if playername.find('AI') != -1:
+            raise LookupError
+
+        playername = playername.strip()
+
+        if playername == '' or playername.isspace():
+            raise LookupError
+
         Session = sessionmaker(bind=engine)
         session = Session()
 
@@ -67,18 +76,18 @@ class PlayerData():
             session.commit()
             session.close()
         else:
-            raise Exception  #should be more specific
+            raise LookupError
 
-        def update_player(self, playername, wins, losses):
-            Session = sessionmaker(bind=engine)
-            session = Session()
-            if session.query(Player).filter_by(name=playername).count() == 1:
-                player = session.query(Player).filter_by(name=playername)
-                player.update(values={'wins':wins,'losses':losses})
-                session.commit()
-                session.close()
-            else:
-                raise Exception
+    def update_player(self, playername, wins, losses):
+        Session = sessionmaker(bind=engine)
+        session = Session()
+        if session.query(Player).filter_by(name=playername).count() == 1:
+            player = session.query(Player).filter_by(name=playername)
+            player.update(values={'wins':wins,'losses':losses})
+            session.commit()
+            session.close()
+        else:
+            raise LookupError
 
 
     def __repr__(self):
